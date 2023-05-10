@@ -41,6 +41,9 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                FlutterLogo(
+                  size: 100,
+                ),
                 TextFormField(
                   controller: _controllerEmail,
                   validator: (text) {
