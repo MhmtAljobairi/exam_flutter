@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                         title: Text(product.name),
                         subtitle: Text(product.category.name),
                         trailing: Text(
-                          product.price.toStringAsFixed(2),
+                          product.finalPrice.toStringAsFixed(2),
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.green),
                         ),

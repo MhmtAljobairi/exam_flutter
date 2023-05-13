@@ -9,6 +9,7 @@ class Product {
   late int currentQty;
   late String description;
   late Category category;
+  late double tax = 16;
   int selectedQty = 0;
 
   Product.fromJson(Map<String, dynamic> json) {
@@ -22,9 +23,29 @@ class Product {
     category = Category.fromJson(json["category"]);
   }
 
-  double get total {
+  double get finalPrice {
+    return price * (1 + (tax / 100));
+  }
+
+  double get subTotal {
     return price * selectedQty;
   }
 
+  double get taxAmount {
+    return (price * (tax / 100)) * selectedQty;
+  }
+
+  double get total {
+    return (price * (1 + (tax / 100))) * selectedQty;
+  }
+
   double get total2 => price * selectedQty;
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "product_id": id,
+        "qty": selectedQty,
+        "price": price,
+        "total": total,
+      };
 }

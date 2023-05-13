@@ -22,8 +22,9 @@ class LoginPage extends StatelessWidget {
       await FlutterSecureStorage()
           .write(key: "token", value: "${value.type} ${value.token}");
 
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+      Navigator.pop(context, true);
+      // Navigator.pushReplacement(
+      //     context, MaterialPageRoute(builder: (context) => HomePage()));
     }).catchError((ex) {
       EasyLoading.dismiss();
       EasyLoading.showError(ex.toString());

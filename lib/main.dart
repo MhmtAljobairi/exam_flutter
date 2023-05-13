@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SplashScreen(),
+        home: HomePage(),
       ),
     );
   }
@@ -49,13 +49,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _checkLogin() async {
     Future.delayed(const Duration(milliseconds: 2000), () async {
-      bool exists = await FlutterSecureStorage().containsKey(key: "token");
-
       Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => exists ? HomePage() : LoginPage(),
-          ));
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     });
   }
 
