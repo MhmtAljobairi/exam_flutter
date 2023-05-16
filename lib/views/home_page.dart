@@ -4,6 +4,8 @@ import 'package:exam_project_flutter/models/product.dart';
 import 'package:exam_project_flutter/views/add_to_cart_widget.dart';
 import 'package:exam_project_flutter/views/dummy_page.dart';
 import 'package:exam_project_flutter/views/login_page.dart';
+import 'package:exam_project_flutter/views/my_account_page.dart';
+import 'package:exam_project_flutter/views/upload_file_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -42,7 +44,25 @@ class _HomePageState extends State<HomePage> {
                       builder: (context) => DummyPage(),
                     ));
               },
-              icon: Icon(Icons.add))
+              icon: Icon(Icons.add)),
+          IconButton(
+              onPressed: () async {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UploadFilePage(),
+                    ));
+              },
+              icon: Icon(Icons.image)),
+          IconButton(
+              onPressed: () async {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyAccountPage(),
+                    ));
+              },
+              icon: Icon(Icons.account_circle_rounded))
         ],
       ),
       body: Container(
